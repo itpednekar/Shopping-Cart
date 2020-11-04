@@ -43,5 +43,10 @@
 }
 .header__option_two {
   padding: 10px;
-  color: rgb(253, 251, 251);
+  margin-top: 5px;
+  color: rgb(7, 0, 0);
+  cursor: pointer;
+}
+.header__option_three {
+  padding: 10px;
 }

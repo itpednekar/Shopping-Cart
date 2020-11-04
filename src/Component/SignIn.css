@@ -1,20 +1,19 @@
-.place__order {
+.signIn {
   display: flex;
-  padding: 10px;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top: 5%;
-  box-shadow: 0 4px 8px 0 rgba(49, 6, 6, 0.2);
+  margin-top: 10%;
+  padding: 50px;
   border-radius: 20px;
-  padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(49, 6, 6, 0.2);
 }
 
-.place__order > input {
+.signIn > input {
   padding: 12px;
   margin: 10px;
-  width: 80%;
+  width: 70%;
   border: 1px solid #ccc;
   display: block;
   font-size: 14px;
@@ -22,15 +21,16 @@
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.place__order > h1 {
-  padding: 5px;
+.signIn > label {
+  margin-left: 10px;
+  margin-top: 10px;
 }
-.place__order > button {
+.signIn > div > button {
+  margin-left: 10px;
   margin-top: 5px;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   cursor: pointer;
-  width: 40%;
   font-size: 18px;
   color: white;
   background-color: rgb(45, 70, 211);
@@ -38,9 +38,4 @@
   outline: 0;
   box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
   border-radius: 0.5rem;
-}
-.place__order > button:active {
-  background-color: #3533ca;
-  box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
-  transform: translateY(4px);
 }

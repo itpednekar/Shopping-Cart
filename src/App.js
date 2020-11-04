@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Component/Header";
@@ -6,12 +6,16 @@ import Home from "./Component/Home";
 import Cart from "./Component/Cart";
 import ProductDetails from "./Component/ProductDetails";
 import PlaceOrder from "./Component/PlaceOrder";
+import SignIn from "./Component/SignIn";
+import Register from "./Component/Register";
+import { auth } from "./firebase";
 
 export const CartContext = React.createContext();
 
 const initialState = {
   product: [],
   search: "",
+  user: "",
 };
 
 const reducer = (state, action) => {
@@ -29,14 +33,27 @@ const reducer = (state, action) => {
       }
       return { ...state, product: newCart };
     case "clearCart":
-      return initialState;
+      return { ...state, product: [] };
     case "searchProduct":
       return { ...state, search: action.value };
+    case "setUser":
+      return { ...state, user: action.user };
   }
 };
 
 function App() {
   const [cart, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      console.log("authUser", authUser);
+
+      if (authUser) {
+        dispatch({ type: "setUser", user: authUser });
+      } else {
+        dispatch({ type: "setUser", user: null });
+      }
+    });
+  }, []);
   return (
     <Router>
       <div className="app">
@@ -44,6 +61,7 @@ function App() {
           value={{
             cartProductState: cart.product,
             cartSearchState: cart.search,
+            cartUserState: cart.user,
             dispatchState: dispatch,
           }}
         >
@@ -57,6 +75,8 @@ function App() {
               component={ProductDetails}
             />
             <Route exact path="/place-order" component={PlaceOrder} />
+            <Route exact path="/sign-in" component={SignIn} />
+            <Route exact path="/register" component={Register} />
           </Switch>
         </CartContext.Provider>
       </div>

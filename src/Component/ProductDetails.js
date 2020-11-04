@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { MoonLoader } from "react-spinners";
 import { CartContext } from "../App";
 import "./ProductDetails.css";
 
@@ -8,13 +9,17 @@ function ProductDetails() {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState({});
   const [qty, setQty] = useState(1);
+  const [loader, setLoader] = useState(false);
+
   useEffect(() => {
+    setLoader(true);
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
         let temp = data;
         temp.qty = qty;
         setProductDetails(temp);
+        setLoader(false);
       });
   }, [id]);
   useEffect(() => {
@@ -27,6 +32,9 @@ function ProductDetails() {
   }
   return (
     <div className="productDetails">
+      <div className="loader">
+        <MoonLoader color="blue" loading={loader}></MoonLoader>
+      </div>
       <div className="productDetails__left">
         <img
           className="productDetails_img"

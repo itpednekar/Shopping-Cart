@@ -2,12 +2,15 @@ import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { CartContext } from "../App";
 import "./Product.css";
+import { MoonLoader } from "react-spinners";
 
 function Product() {
   const [item, seItems] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const history = useHistory();
   const context = useContext(CartContext);
+  const [loader, setLoader] = useState(false);
+
   let filterdItems = item.filter((i) => {
     return (
       i.title.toLowerCase().indexOf(context.cartSearchState.toLowerCase()) !==
@@ -22,11 +25,13 @@ function Product() {
   });
 
   useEffect(() => {
+    setLoader(true);
     fetch(`https://fakestoreapi.com/products`)
       .then((response) => response.json())
       .then((data) => {
         setAllProducts(data);
         seItems(data);
+        setLoader(false);
       });
   }, []);
   function onClickCart(data) {
@@ -71,6 +76,9 @@ function Product() {
           <option value="jewelery">Jewelery</option>
           <option value="electronics">Electronics</option>
         </select>
+      </div>
+      <div className="loader">
+        <MoonLoader color="blue" loading={loader}></MoonLoader>
       </div>
       <div className="product_start">
         {filterdItems.map((data, index) => {

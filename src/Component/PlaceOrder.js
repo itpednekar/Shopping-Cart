@@ -3,14 +3,14 @@ import "./PlaceOrder.css";
 import { useFormik } from "formik";
 import { CartContext } from "../App";
 import { useHistory } from "react-router-dom";
-import background from "../Images/money.jpg";
+import SignIn from "./SignIn";
 
 function PlaceOrder() {
   const context = useContext(CartContext);
   const history = useHistory();
   const initialValues = {
     name: "",
-    email: "",
+    email: context.cartUserState ? context.cartUserState.email : "",
     mob: "",
     addr: "",
     creditNo: "",
