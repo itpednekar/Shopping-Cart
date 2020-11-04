@@ -28,8 +28,20 @@
   padding: 10px;
   flex-direction: row;
   justify-content: space-around;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.product__button__div > select {
+  padding: 12px;
+  margin-top: 10px;
+  width: 35%;
+  border: 1px solid #ccc;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 .product__button__div > button {
   /* margin-top: 5px; */

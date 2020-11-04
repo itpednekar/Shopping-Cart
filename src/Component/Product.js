@@ -5,6 +5,7 @@ import "./Product.css";
 
 function Product() {
   const [item, seItems] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const history = useHistory();
   const context = useContext(CartContext);
   let filterdItems = item.filter((i) => {
@@ -24,33 +25,54 @@ function Product() {
     fetch(`https://fakestoreapi.com/products`)
       .then((response) => response.json())
       .then((data) => {
+        setAllProducts(data);
         seItems(data);
       });
   }, []);
-
   function onClickCart(data) {
     history.push(`/product-details/${data.id}`);
   }
 
-  const handleClick = (value) => {
+  const onChangeOrderBy = (e) => {
     let sorted = [...item].sort((a, b) => {
-      let isReversed = value === "asc" ? 1 : -1;
+      let isReversed = e.target.value === "asc" ? 1 : -1;
       return isReversed == 1 ? a.price - b.price : b.price - a.price;
     });
     seItems(sorted);
   };
-
+  const onChangeCategory = (e) => {
+    if (e.target.value) {
+      let data = allProducts.filter((i) => {
+        return i.category.toLowerCase() === e.target.value.toLowerCase();
+      });
+      seItems(data);
+    } else {
+      seItems(allProducts);
+    }
+  };
   return (
     <div>
       <div>
-        <ul className="product__button__div">
-          <button onClick={() => handleClick("asc")}>
-            <strong> Sort (Price) -- Low to High</strong>
-          </button>
-          <button onClick={() => handleClick("desc")}>
-            <strong> Sort (Price) -- High to Low</strong>
-          </button>
-        </ul>
+        <div className="product__button__div">
+          <label>
+            <strong>Order By</strong>
+          </label>
+          <select onChange={onChangeOrderBy} placeholder="Select">
+            <option value="">Select</option>
+            <option value="asc">Low To High</option>
+            <option value="desc">High To Low</option>
+          </select>
+          <label>
+            <strong>Category</strong>
+          </label>
+          <select onChange={onChangeCategory}>
+            <option value="">All</option>
+            <option value="men clothing">Men Clothing</option>
+            <option value="women clothing">Women Clothing</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="electronics">Electronics</option>
+          </select>
+        </div>
       </div>
       <div className="product_start">
         {filterdItems.map((data, index) => {
