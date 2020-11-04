@@ -8,7 +8,6 @@ function Cart() {
 
   useEffect(() => {
     setCartItems(context.cartProductState);
-    console.log("Use effect called", context.cartProductState);
   }, [context.cartProductState]);
 
   let subTotal = 0;
@@ -25,7 +24,7 @@ function Cart() {
   return (
     <div className="cart">
       <div className="cart__contains">
-        {context.cartCountState != 0 ? (
+        {context.cartProductState.length != 0 ? (
           <h1>Place Your Order!</h1>
         ) : (
           <h1>Your cart is Empty :(</h1>
@@ -50,7 +49,7 @@ function Cart() {
           );
         })}
       </div>
-      {context.cartCountState != 0 && (
+      {context.cartProductState.length != 0 && (
         <div className="cart__receipt">
           <Subtotal subTotal={subTotal} />
         </div>

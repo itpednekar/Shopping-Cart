@@ -10,7 +10,6 @@ import PlaceOrder from "./Component/PlaceOrder";
 export const CartContext = React.createContext();
 
 const initialState = {
-  count: 0,
   product: [],
   search: "",
 };
@@ -20,20 +19,15 @@ const reducer = (state, action) => {
     case "addToCart":
       return {
         ...state,
-        count: state.count + 1,
         product: [...state.product, action.value.productDetails],
       };
     case "removeFromCart":
       let newCart = [...state.product];
       const index = state.product.findIndex((item) => (item.id = action.id));
-      console.log("Index", index);
       if (index >= 0) {
         newCart.splice(index, 1);
-        console.log(newCart);
-      } else {
-        console.log("Cant remove product ");
       }
-      return { ...state, count: state.count - 1, product: newCart };
+      return { ...state, product: newCart };
     case "clearCart":
       return initialState;
     case "searchProduct":
@@ -48,7 +42,6 @@ function App() {
       <div className="app">
         <CartContext.Provider
           value={{
-            cartCountState: cart.count,
             cartProductState: cart.product,
             cartSearchState: cart.search,
             dispatchState: dispatch,

@@ -52,27 +52,25 @@ function Product() {
   };
   return (
     <div>
-      <div>
-        <div className="product__button__div">
-          <label>
-            <strong>Order By</strong>
-          </label>
-          <select onChange={onChangeOrderBy} placeholder="Select">
-            <option value="">Select</option>
-            <option value="asc">Low To High</option>
-            <option value="desc">High To Low</option>
-          </select>
-          <label>
-            <strong>Category</strong>
-          </label>
-          <select onChange={onChangeCategory}>
-            <option value="">All</option>
-            <option value="men clothing">Men Clothing</option>
-            <option value="women clothing">Women Clothing</option>
-            <option value="jewelery">Jewelery</option>
-            <option value="electronics">Electronics</option>
-          </select>
-        </div>
+      <div className="product__button__div">
+        <label>
+          <strong>Order By</strong>
+        </label>
+        <select onChange={onChangeOrderBy} placeholder="Select">
+          <option value="">Select</option>
+          <option value="asc">Low To High</option>
+          <option value="desc">High To Low</option>
+        </select>
+        <label>
+          <strong>Category</strong>
+        </label>
+        <select onChange={onChangeCategory}>
+          <option value="">All</option>
+          <option value="men clothing">Men Clothing</option>
+          <option value="women clothing">Women Clothing</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="electronics">Electronics</option>
+        </select>
       </div>
       <div className="product_start">
         {filterdItems.map((data, index) => {

@@ -10,7 +10,7 @@
   background-color: white;
 }
 .subtotal button:active {
-  background-color: #1d0202ea;
+  background-color: #3533ca;
   box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
   transform: translateY(4px);
 }
@@ -22,7 +22,7 @@
   width: 100%;
   font-size: 18px;
   color: white;
-  background-color: rgb(29, 30, 31);
+  background-color: rgb(45, 70, 211);
   border: none;
   outline: 0;
 }

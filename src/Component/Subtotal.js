@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { CartContext } from "../App";
-import PlaceOrder from "./PlaceOrder";
 import "./Subtotal.css";
 
 function Subtotal({ subTotal }) {
@@ -12,8 +11,8 @@ function Subtotal({ subTotal }) {
   };
   return (
     <div className="subtotal">
-      <h3>Subtotal ({context.cartCountState} items) </h3>
-      <strong>Price : {subTotal.toFixed(2)}$</strong>
+      <h3>Subtotal ({context.cartProductState.length} items) </h3>
+      <strong>Price : {subTotal.toFixed(2)} $</strong>
       <br />
       <button onClick={placeOrder}>PLACE ORDER</button>
     </div>

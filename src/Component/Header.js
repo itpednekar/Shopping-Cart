@@ -38,7 +38,10 @@ function Header() {
         </div>
         <div className="header__option_two">
           <Link exact to="/cart">
-            <Badge badgeContent={context.cartCountState} color="secondary">
+            <Badge
+              badgeContent={context.cartProductState.length}
+              color="secondary"
+            >
               <ShoppingCartOutlinedIcon style={{ fontSize: 35 }} />
             </Badge>
           </Link>
