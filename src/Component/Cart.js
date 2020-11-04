@@ -26,7 +26,7 @@ function Cart() {
     <div className="cart">
       <div className="cart__contains">
         {context.cartCountState != 0 ? (
-          <h1>Place your Order!</h1>
+          <h1>Place Your Order!</h1>
         ) : (
           <h1>Your cart is Empty :(</h1>
         )}

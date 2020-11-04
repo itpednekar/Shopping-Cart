@@ -13,6 +13,7 @@
   object-fit: contain;
   margin: 0 20px;
 }
+
 .header__searchIcon {
   padding: 5px;
   color: rgba(0, 4, 7, 0.795);

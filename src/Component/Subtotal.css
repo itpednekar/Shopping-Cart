@@ -7,7 +7,7 @@
   width: 100%;
   max-height: 400px;
   min-width: 100px;
-  background-color: #f3f3f3;
+  background-color: white;
 }
 .subtotal button:active {
   background-color: #1d0202ea;

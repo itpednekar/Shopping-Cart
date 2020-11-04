@@ -8,6 +8,25 @@
 .product:hover {
   box-shadow: 0 8px 16px 0 rgba(6, 0, 7, 0.425);
 }
+@media screen and (max-width: 800px) {
+  .productDetails {
+    flex-direction: column;
+  }
+  .productDetails__left {
+    margin: 10%;
+    padding: 0%;
+    align-items: center;
+  }
+  .productDetails_img {
+    width: auto;
+    height: 100%;
+  }
+  .product__cart {
+  }
+  .productDetails__right {
+    width: 100%;
+  }
+}
 .product {
   border-radius: 1rem;
 }

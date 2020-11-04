@@ -3,7 +3,9 @@
   padding: 10px;
   align-items: center;
   flex-direction: column;
+  margin: 5%;
 }
+
 .place__order > input {
   padding: 12px;
   margin: 10px;

@@ -14,9 +14,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   flex: 1 0 21%; /* explanation below */
 }
-@media (max-width: 900px) {
+
+@media screen and (max-width: 800px) {
   .product {
-    flex: 1 0 100%;
+    flex: 1 0 50%;
+    margin: 5px;
+    padding: 5px; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 .product__button__div {
