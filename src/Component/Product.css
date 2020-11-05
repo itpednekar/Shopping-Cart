@@ -1,0 +1,100 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  max-height: 400px;
+  min-width: 100px;
+  /* max-width: 300px; */
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  flex: 1 0 21%; /* explanation below */
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .product {
+    flex: 1 0 50%;
+    margin: 5px;
+    padding: 5px; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+.product__button__div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.product__button__div > select {
+  padding: 12px;
+  margin-top: 10px;
+  width: 35%;
+  border: 1px solid #ccc;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.product__button__div > button {
+  /* margin-top: 5px; */
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(67, 23, 226);
+  background-color: white;
+  border: none;
+  outline: 0;
+  /* box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
+  border-radius: 0.5rem; */
+}
+.product__button__div > button:active {
+  /* background-color: #eeeef8; */
+  box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
+  transform: translateY(4px);
+  border-radius: 0.5rem;
+}
+.product_start {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.product > img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.product > button {
+  padding: 5px;
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: rgb(10, 10, 10);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.product__desc {
+  overflow: auto;
+  padding: 5px;
+}
+.product__title {
+  height: 200px;
+  margin-bottom: 15px;
+}

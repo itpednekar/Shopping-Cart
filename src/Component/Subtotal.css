@@ -1,0 +1,28 @@
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(41, 31, 133, 0.2);
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  max-height: 400px;
+  min-width: 100px;
+  background-color: white;
+}
+.subtotal button:active {
+  background-color: #3533ca;
+  box-shadow: 0 4px 8px 0 rgba(37, 28, 28, 0.2);
+  transform: translateY(4px);
+}
+.subtotal > button {
+  border-radius: 0.5rem;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  background-color: rgb(45, 70, 211);
+  border: none;
+  outline: 0;
+}
