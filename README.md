@@ -15,8 +15,6 @@
 
 ---
 
----
-
 ## Use following command to use code.
 
 ### npm install
