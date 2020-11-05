@@ -45,7 +45,7 @@ function PlaceOrder() {
       errors.mob = "Mobile No is Required!";
     } else if (isNaN(values.mob)) {
       errors.mob = "Please enter valid Mobile No!";
-    } else if (values.mob.length != 10) {
+    } else if (values.mob.length !== 10) {
       errors.mob = "Mobile No must contain 10 digits!";
     }
     if (!values.addr) errors.addr = "Address is Required!";
@@ -53,7 +53,7 @@ function PlaceOrder() {
       errors.creditNo = "Credit Card No is Required!";
     } else if (isNaN(values.creditNo)) {
       errors.creditNo = "Please enter valid Credit Card No!";
-    } else if (values.creditNo.length != 16) {
+    } else if (values.creditNo.length !== 16) {
       errors.creditNo = "Credit Card No must contain 16 digits!";
     }
     return errors;

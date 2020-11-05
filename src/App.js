@@ -33,7 +33,7 @@ const reducer = (state, action) => {
       }
       return { ...state, product: newCart };
     case "clearCart":
-      return { ...state, product: [] };
+      return { ...state, product: [], search: "" };
     case "searchProduct":
       return { ...state, search: action.value };
     case "setUser":
