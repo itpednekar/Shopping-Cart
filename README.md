@@ -14,6 +14,10 @@
 - [:fire: Firebase ](https://firebase.google.com/)
 
 ---
+## Shopping Cart Screenshots
+
+<img width="913" alt="Home Page" src="https://user-images.githubusercontent.com/58209938/98220679-a92e8e00-1f74-11eb-8dbe-ba631230d116.PNG">
+
 
 ---
 
